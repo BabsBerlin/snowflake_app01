@@ -25,6 +25,7 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 streamlit.dataframe(fruits_to_show)
 
 
+# new section to show the api response
 def get_fruityvice_data(fruit_choice):
     fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
     # convert json response into pandas DF 
@@ -32,11 +33,11 @@ def get_fruityvice_data(fruit_choice):
     # prints DF
     return fruityvice_normalized
     
-# new section to show the api response
+
 streamlit.header('Fruityvice Fruit Advice!')
 try:
   # let the user decide which fruit to look up
-  fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+  fruit_choice = streamlit.text_input('What fruit would you like information about?')
   if not fruit_choice:
     streamlit.error('Please select a fruit to get info!')
   else:
@@ -46,16 +47,21 @@ try:
 except URLError as e:
     streamlit.error()
 
-streamlit.stop()
 
-# connect to snowflake
-my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-my_cur = my_cnx.cursor()
-#my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-my_cur.execute("SELECT * FROM fruit_load_list")
-my_data_rows = my_cur.fetchall()
+# add button action to load fruit list
 streamlit.header("The fruit load list contains:")
-streamlit.dataframe(my_data_rows)
+def get_fruit_load_list():
+    # connect to snowflake
+    with my_cnx.cursor() as my_cur:
+        my_cur.execute("SELECT * FROM fruit_load_list")
+        return my_cur.fetchall()
+
+if streamlit.button('Get Fruit Load List'):
+    my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+    my_data_rows = get_fruit_load_list():
+    streamlit.dataframe(my_data_rows)
+
+streamlit.stop()
 
 # let the user decide which fruit to look up
 fruit_choice_add = streamlit.text_input('What fruit would you like to add?','jackfruit')
