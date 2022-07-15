@@ -2,7 +2,7 @@
 
 This little app was build during the **Snowflake Data Application Builders Workshop**.
 
-The workshop covered things like making connections to APIs and Snowflake via [Rivery](https://rivery.io/) and read and write data to a Snowflake database. 
+The workshop covered things like making connections to APIs and [Snowflake](https://snowflake.com) via [Rivery](https://rivery.io/) and read and write data to a Snowflake database. 
 
 Check out the [Snowflake Education & Training](https://snowflake.com/education-and-training) site, it's free!
 
