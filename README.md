@@ -4,7 +4,7 @@ This little app was build during the **Snowflake Data Application Builders Works
 
 The workshop covered things like making connections to APIs and Snowflake via [Rivery](https://rivery.io/) and read and write data to a Snowflake database. 
 
-Check out the [Snowflake Education & Training](snowflake.com/education-and-training) site, it's free!
+Check out the [Snowflake Education & Training](https://snowflake.com/education-and-training) site, it's free!
 
 [streamlit app](https://babsberlin-snowflake-app01-streamlit-app-3wn3v8.streamlitapp.com/) - please use with caution, it is connected to a Trial account.
 
