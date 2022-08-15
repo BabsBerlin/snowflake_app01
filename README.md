@@ -6,6 +6,6 @@ The workshop covered things like making connections to APIs and [Snowflake](http
 
 Check out the [Snowflake Education & Training](https://snowflake.com/education-and-training) site, it's free!
 
-[streamlit app](https://babsberlin-snowflake-app01-streamlit-app-3wn3v8.streamlitapp.com/) - please use with caution, it is connected to a Trial account.
+<!--[streamlit app](https://babsberlin-snowflake-app01-streamlit-app-3wn3v8.streamlitapp.com/) - please use with caution, it is connected to a Trial account.-->
 
 [my badge](https://www.credly.com/badges/8c563bd2-75b3-49c4-9130-3f290f836ce0/public_url)
